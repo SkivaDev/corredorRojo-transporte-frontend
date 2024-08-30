@@ -8,24 +8,6 @@ const LandingPage = () => {
     <>
       {/* <main className="flex-grow">
 
-        
-
-        <section className="bg-gray-100 py-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-center mb-8">Nuestros servicios</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {['CARGA LIGERA', 'CARGA REFRIGERADA', 'CARGA EXPRESS'].map((service, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <Image src="/placeholder.svg" alt={service} width={300} height={200} className="mb-4 rounded" />
-                    <h3 className="text-xl font-bold mb-2">{service}</h3>
-                    <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
 
         <section className="container mx-auto px-4 py-12">
           <h2 className="text-2xl font-bold text-center mb-8">PORQUE NOS IMPORTA TU SALUD</h2>

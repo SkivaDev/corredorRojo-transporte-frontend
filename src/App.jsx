@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import MasterContent from "./components/MasterContent";
 import ServiceSection from "./components/ServiceSection";
+import FeaturesSection from "./components/FeaturesSection";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <MasterContent />
         <ServiceSection />
+        <FeaturesSection  />
       </main>
       
       <LandingPage />
