@@ -1,28 +1,13 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
+// import Image from 'next/image'
+// import { Button } from "@/components/ui/button"
+// import { Input } from "@/components/ui/input"
+// import { Card, CardContent } from "@/components/ui/card"
 
-export default function Component() {
+const LandingPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Image src="/placeholder.svg" alt="Roque Transport Logo" width={200} height={50} />
-          <nav>
-            <ul className="flex space-x-4">
-              <li><Link href="#" className="text-gray-600 hover:text-gray-900">INICIO</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-900">NOSOTROS</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-900">BLOG</Link></li>
-              <li><Link href="#" className="text-gray-600 hover:text-gray-900">CONTACTO</Link></li>
-            </ul>
-          </nav>
-          <Button className="bg-green-500 hover:bg-green-600 text-white">COTIZAR</Button>
-        </div>
-      </header>
 
-      <main className="flex-grow">
+      {/* <main className="flex-grow">
         <section className="relative h-[400px]">
           <Image src="/placeholder.svg" alt="Transport Banner" layout="fill" objectFit="cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -152,7 +137,10 @@ export default function Component() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }
+
+
+export default LandingPage
