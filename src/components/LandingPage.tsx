@@ -6,22 +6,8 @@
 const LandingPage = () => {
   return (
     <>
-      {/* <main className="flex-grow">
+      {/* 
 
-
-
-
-        <section className="bg-gray-100 py-12">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-center mb-8">Ellos confían en nosotros</h2>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              {['Celima', 'Andes Petroleum', 'TPP', 'Klar', 'Supermercados Peruanos'].map((client, index) => (
-                <Image key={index} src="/placeholder.svg" alt={client} width={120} height={60} className="grayscale hover:grayscale-0 transition-all duration-300" />
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
 
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4">
