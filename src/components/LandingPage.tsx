@@ -7,15 +7,6 @@ const LandingPage = () => {
   return (
     <>
       {/* <main className="flex-grow">
-        <section className="relative h-[400px]">
-          <Image src="/placeholder.svg" alt="Transport Banner" layout="fill" objectFit="cover" />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-4xl font-bold mb-4">CARGA REFRIGERADA</h1>
-              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black">VER MÁS</Button>
-            </div>
-          </div>
-        </section>
 
         <section className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

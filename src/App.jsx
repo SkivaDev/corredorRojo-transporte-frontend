@@ -2,6 +2,7 @@ import LandingPage from "./components/LandingPage";
 import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import MasterContent from "./components/MasterContent";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       
       <main className="flex-grow">
         <Hero />
+        <MasterContent />
       </main>
       
       <LandingPage />
