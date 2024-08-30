@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import MasterContent from "./components/MasterContent";
 import ServiceSection from "./components/ServiceSection";
 import FeaturesSection from "./components/FeaturesSection";
+import ClientsSection from "./components/ClientsSection";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <MasterContent />
         <ServiceSection />
         <FeaturesSection  />
+        <ClientsSection />
       </main>
       
       <LandingPage />
