@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import MasterContent from "./components/MasterContent";
+import ServiceSection from "./components/ServiceSection";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main className="flex-grow">
         <Hero />
         <MasterContent />
+        <ServiceSection />
       </main>
       
       <LandingPage />

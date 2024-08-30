@@ -8,34 +8,7 @@ const LandingPage = () => {
     <>
       {/* <main className="flex-grow">
 
-        <section className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-2xl font-bold mb-4">¡BIENVENIDO!</h2>
-              <p className="text-gray-600 mb-4">
-                Somos Roque Transport, una empresa 4PL 100% peruana dedicada a brindar soluciones de logística que opera en todo el Perú.
-              </p>
-              <p className="text-gray-600 mb-4">
-                Contamos con una amplia y moderna flota, tanto eficil equipada con modernos equipos de comunicación, el rastreo por GPS permite tener un control total de la carga y la unidad en tiempo real, lo que nos permite brindar un servicio de calidad con el plus al instante, en beneficio de la información oportuna que nuestros clientes se merecen.
-              </p>
-              <Link href="#" className="text-blue-500 hover:underline">VER MÁS</Link>
-            </div>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">COTIZA AQUÍ AHORA</h3>
-                <form className="space-y-4">
-                  <Input placeholder="Origen" />
-                  <Input placeholder="Destino" />
-                  <Input placeholder="Peso aprox (en kg)" />
-                  <Input placeholder="Nombre Completo" />
-                  <Input placeholder="Teléfono" />
-                  <Input placeholder="Tu correo electrónico" />
-                  <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">OBTENER UNA COTIZACIÓN</Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        
 
         <section className="bg-gray-100 py-12">
           <div className="container mx-auto px-4">
