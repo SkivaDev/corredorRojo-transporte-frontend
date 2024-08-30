@@ -5,8 +5,7 @@
 
 const LandingPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-
+    <>
       {/* <main className="flex-grow">
         <section className="relative h-[400px]">
           <Image src="/placeholder.svg" alt="Transport Banner" layout="fill" objectFit="cover" />
@@ -138,9 +137,8 @@ const LandingPage = () => {
           </div>
         </div>
       </footer> */}
-    </div>
-  )
-}
+    </>
+  );
+};
 
-
-export default LandingPage
+export default LandingPage;
