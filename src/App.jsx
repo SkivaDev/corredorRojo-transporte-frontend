@@ -10,11 +10,13 @@ import Registro from "./pages/register";
 import Usuario from "./pages/usuario";
 import Tarjeta from "./pages/Usuario/tarjeta";
 import Codigo from "./pages/Usuario/codigo";
-import Agente  from "./pages/Usuario/agente";
-import ModalComponent from "./components/ModalComponent"; 
+import Agente from "./pages/Usuario/agente";
+import ModalComponent from "./components/ModalComponent";
+
+import Dashboard from "./pages/dashboard";
 
 const App = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(true); 
+  const [modalIsOpen, setModalIsOpen] = useState(true);
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -36,6 +38,8 @@ const App = () => {
         <Route path="/tarjeta" element={<Tarjeta />} />
         <Route path="/agente" element={<Agente />} />
         <Route path="/codigo" element={<Codigo />} />
+
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
