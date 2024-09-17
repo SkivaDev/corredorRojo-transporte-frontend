@@ -1,42 +1,344 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+    --primary-color: #fead53;
+    --text-dark: #333333;
+    --text-light: #ffffff33;
+    --extra-light: #f3f4f6;
+    --secondary-color: #e8f1fa;
+
+    --max-width: 1300px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+span {
+    color: #4989A2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body {
+    background: #fefefe;
+    overflow-x: hidden;
 }
 
-.card {
-  padding: 2em;
+.info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: #000;
 }
 
-.read-the-docs {
-  color: #888;
-} */
+.icons {
+    display: flex;
+    margin: auto;
+}
+
+.icons p {
+    font-weight: 400;
+    color: #979797;
+    margin: 20px;
+    font-style: italic;
+}
+
+.icons .prom {
+    color: #fff;
+    text-decoration: underline;
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    height: 80px;
+    background: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.hamburguer {
+    display: none;
+}
+
+.nav-bar ul {
+    display: flex;
+}
+
+.nav-bar ul li {
+    position: relative;
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: #11101b;
+    font-size: 14px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 2px;
+}
+
+.nav-bar ul li .user {
+    margin-left: 50px;
+    color: #fff;
+    background: #DA0F0F;
+}
+
+.nav-bar ul li .user:hover {
+    background: #B50808;
+    color: #fff;
+}
+
+.nav-bar ul li a:hover {
+    color: #B50808;
+}
+
+/* Menú desplegable */
+.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fefefe;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    width: 200px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: #11101b;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.dropdown-menu li a:hover {
+    color: #fff;
+}
+
+/* Responsividad */
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+
+    .hamburguer {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburguer .line {
+        width: 30px;
+        height: 3px;
+        background: #DA0F0F;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #fefefe;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .nav-bar.active {
+        height: 600px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul {
+        margin-top: 10px;
+        opacity: 1;
+    }
+
+    .nav-bar ul li {
+        margin-bottom: 5px;
+    }
+
+    .nav-bar ul li .user {
+        margin-left: 0px;
+    }
+
+    .dropdown .dropdown-menu {
+        margin-top: 0px;
+        position: static;
+        display: block;
+        width: 100%;
+        box-shadow: none;
+        padding: 10px 0;
+    }
+
+    .dropdown-menu li {
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    .dropdown-menu li a {
+        display: block;
+        text-align: center;
+        border-radius: 4px;
+    }
+}
+
+@media screen and (max-width: 392px) {
+    .info {
+        height: 70px;
+    }
+
+    .info .icons {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .info .icons a {
+        margin: 8px;
+    }
+}
+
+/* ------------------------------BODY------------------------------ */
+
+.image-container {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Hace que el contenedor ocupe toda la pantalla */
+}
+
+.image-container img {
+    max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta la imagen para cubrir su contenedor sin deformarse */
+}
+
+@media screen and (max-width: 768px) {
+    .image-container {
+        height: auto; /* Permite que el contenedor sea más flexible en pantallas pequeñas */
+        padding: 20px;
+    }
+
+    .image-container img {
+        max-width: 80%; /* Reduce el tamaño de la imagen en pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-container img {
+        max-width: 90%; /* En pantallas aún más pequeñas, la imagen será más pequeña */
+    }
+}
+
+
+/* -------------------------------FORMULARIO---------------------- */
+/* Estilo para el contenedor del formulario */
+.ticket-form-container {
+    padding: 40px;
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group label i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    color: #DA0F0F; /* Color del icono */
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.form-group input[type="date"]::-webkit-inner-spin-button,
+.form-group input[type="date"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-group input[type="number"] {
+    -moz-appearance: textfield;
+}

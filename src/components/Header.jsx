@@ -1,43 +1,82 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Asegúrate de importar 'Link'
+
 const Header = () => {
+  const [activeLink, setActiveLink] = useState("/inicio");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleLinkClick = (path) => {
+    setActiveLink(path);
+    setMenuOpen(false); // Cerrar el menú cuando se hace clic en un enlace
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <header className="bg-white shadow-sm">
-      <div className="max-w-[1140px] w-full mx-auto px-4 py-4 flex justify-between items-center">
-        <img
-          src="/src/assets/images/logo.png"
-          alt="Metropolitano Logo"
-          width={200}
-          height={50}
-        />
-        <nav>
-          <ul className="flex space-x-4">
+    <>
+      <header>
+        <div className="logo">
+          <img src="/src/assets/images/logo.png" alt="Logo" />
+        </div>
+        <div className="hamburguer" onClick={toggleMenu}>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+        <nav className={`nav-bar ${menuOpen ? "active" : ""}`}>
+          <ul className="font-principal">
             <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
+              <Link
+                to="/inicio"
+                className={activeLink === "/inicio" ? "active" : ""}
+                onClick={() => handleLinkClick("/inicio")}
+              >
                 INICIO
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
+              <Link
+                to="/nosotros"
+                className={activeLink === "/nosotros" ? "active" : ""}
+                onClick={() => handleLinkClick("/nosotros")}
+              >
                 NOSOTROS
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
-                BLOG
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
+              <Link
+                to="/contacto"
+                className={activeLink === "/contacto" ? "active" : ""}
+                onClick={() => handleLinkClick("/contacto")}
+              >
                 CONTACTO
-              </a>
+              </Link>
+            </li>
+            <li className="dropdown">
+              <Link
+                to="/blog"
+                onClick={() => handleLinkClick("/blog")}
+              >
+                SERVICIO
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/inicioSesion"
+                className={activeLink === "/inicioSesion" ? "user active" : "user"}
+                onClick={() => handleLinkClick("/inicioSesion")}
+              >
+                INICIO SESION
+              </Link>
             </li>
           </ul>
         </nav>
-        <button className="bg-green-500 hover:bg-green-600 text-white px-[16px] py-[10px] rounded-md">
-          COTIZAR
-        </button>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
 export default Header;
+

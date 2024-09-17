@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .transition {
+    @apply transition-transform duration-300 transform hover:scale-110
+  }
+
+  .area {
+    grid-template-areas:
+      "nombre"
+      "correo"
+      "celular"
+      "mensaje"
+      "enviar";
+  }
+
+  .area-md {
+    grid-template-areas:
+      "nombre   nombre"
+      "correo   celular"
+      "mensaje  mensaje"
+      "enviar   enviar"
+    ;
+  }
+}
+
+
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -5,11 +5,9 @@ const Hero = () => {
 
     const [currentSlide, setCurrentSlide] = useState(0)
     const slides = [
-      { image: "/src/assets/images/metro-picture.jpg", title: "CARGA REFRIGERADA" },
-      { image: "/src/assets/images/metro-picture-2.png", title: "CARGA PESADA" },
-      { image: "/src/assets/images/metro-picture.jpg", title: "CARGA LIGERA" },
-      { image: "/src/assets/images/metro-picture-2.png", title: "CARGA EXPRESS" },
-      { image: "/src/assets/images/metro-picture.jpg", title: "LOGÍSTICA INTEGRAL" },
+      { image: "/src/assets/images/img1.jpg", title: "UN NUEVO SISTEMA", subtitle: "de trasporte urbano" },
+      { image: "/src/assets/images/img2.jpg", title: "MODERNA FLOTA DE BUSES", subtitle: "para el trasporte público de Lima" },
+      { image: "/src/assets/images/img3.jpg", title: "MÁS DE 40 PARADEROS", subtitle: "exclusivo para nuestros pasajeros" },
     ]
   
     useEffect(() => {
@@ -40,16 +38,13 @@ const Hero = () => {
           <img
             src={slide.image}
             alt={slide.title}
+            alt1={slide.subtitle}
             className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="text-center text-white">
-              <h1 className="text-4xl font-bold mb-4">{slide.title}</h1>
-              <button
-                className="mt-[20px] px-[20px] py-[15px] text-white border-blue-500 hover:bg-white hover:text-black outline rounded-full"
-              >
-                VER MÁS
-              </button>
+              <h1 className="text-5xl font-bold mb-4">{slide.title}</h1>
+              <p className="text-2xl font-bold mb-4">{slide.subtitle}</p>
             </div>
           </div>
         </div>
