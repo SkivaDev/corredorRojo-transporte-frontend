@@ -1,7 +1,8 @@
 import React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { MdSpaceDashboard } from "react-icons/md";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faCoins } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderDashboard = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
   return (
@@ -16,19 +17,28 @@ const HeaderDashboard = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
               <HiOutlineMenuAlt2 className="text-2xl" />
             </button>
             <a href="#" className="flex ms-2 md:me-24">
-              <MdSpaceDashboard className="h-8 me-3 text-xl text-violet-500" />
-              <span className="self-center text-xl text-black font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                DaxBod
-              </span>
+              <img src="/src/assets/images/logo.png" width={150} />
             </a>
           </div>
 
-          <button
-            className="dark:bg-slate-50 dark:text-slate-700 rounded-full p-2"
-            onClick={toggleDarkMode}
-          >
-            {darkMode ? <FaSun /> : <FaMoon />}
-          </button>
+          <div className="flex items-center space-x-4">
+            <a href="#" className="text-sm font-medium dark:text-white">
+              <FontAwesomeIcon icon={faCartShopping} />
+            </a>
+
+            {/* Enlace para los puntos */}
+            <a href="#" className="text-sm font-medium dark:text-white">
+              <FontAwesomeIcon icon={faCoins} />
+            </a>
+
+            {/* Botón para cambiar el modo oscuro */}
+            <button
+              className="dark:bg-slate-50 dark:text-slate-700 rounded-full p-2"
+              onClick={toggleDarkMode}
+            >
+              {darkMode ? <FaSun /> : <FaMoon />}
+            </button>
+          </div>
         </div>
       </div>
     </nav>

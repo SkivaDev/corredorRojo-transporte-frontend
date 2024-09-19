@@ -2,7 +2,7 @@ import React from "react";
 
 const Agentes = () => {
   return (
-    <div className="p-6">
+    <div className="p-6 mt-16 sm:ml-64">
       <h2 className="text-2xl font-bold mb-4">Agentes Bancarios Cercanos</h2>
       <p>Consulta los agentes bancarios más cercanos de:</p>
       <ul className="list-disc ml-6">

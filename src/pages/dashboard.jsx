@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Header from "../components/HeaderDashboard";
-import SideBar from "../components/SileBarDashboard";
+import { Outlet } from "react-router-dom";
+import Header from "../components/Dashboard/HeaderDashboard";
+import SideBar from "../components/Dashboard/SileBarDashboard";
 
 const Dashboard = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,7 +23,14 @@ const Dashboard = () => {
         toggleSidebar={toggleSidebar}
       />
 
-      <SideBar isSidebarOpen={isSidebarOpen} />
+      <div className="flex">
+        <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+        {/* Contenedor dinámico */}
+        <div className="flex-grow">
+          <Outlet isSidebarOpen={isSidebarOpen} />
+        </div>
+      </div>
     </div>
   );
 };

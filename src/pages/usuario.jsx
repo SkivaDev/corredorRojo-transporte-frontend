@@ -34,13 +34,13 @@ const Usuario = () => {
     if (metodoPago) {
       switch (metodoPago) {
         case "tarjeta":
-          navigate("/tarjeta");
+          navigate("/dashboard/tarjeta");
           break;
         case "codigo":
           navigate("/codigo");
           break;
         case "agentes":
-          navigate("/agente");
+          navigate("/dashboard/agente");
           break;
         default:
           break;
@@ -102,7 +102,7 @@ const Usuario = () => {
   };
 
   return (
-    <div className="h-screen flex">
+    <div className="h-screen flex mt-16 sm:ml-64">
       {/* Panel lateral izquierdo */}
       <div className="w-[20%] bg-gray-800 text-white p-6">
         {/* Foto y nombre del usuario */}
@@ -217,7 +217,7 @@ const Usuario = () => {
 
               <button
                 className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700"
-                onClick={handleRecargarTarjeta}
+                onClick={handleProcesarCompra}
               >
                 Procesar Recarga
               </button>

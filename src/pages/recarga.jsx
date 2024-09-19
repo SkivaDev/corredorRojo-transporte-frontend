@@ -12,7 +12,7 @@ const Recarga = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-gray-100 rounded-md shadow-lg">
+    <div className="mx-auto p-8 shadow-lg mt-16 sm:ml-64 dark:bg-gray-800 dark:text-white h-screen">
       <h2 className="text-2xl font-bold mb-4">Recargar Tarjeta</h2>
       <div className="mb-4">
         <label className="block mb-1">Monto a recargar:</label>

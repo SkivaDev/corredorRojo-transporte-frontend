@@ -34,12 +34,15 @@ const App = () => {
         <Route path="/inicioSesion" element={<InicioSesion />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/usuario" element={<Usuario />} />
-        <Route path="/recarga" element={<Recarga />} />
-        <Route path="/tarjeta" element={<Tarjeta />} />
-        <Route path="/agente" element={<Agente />} />
+
         <Route path="/codigo" element={<Codigo />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<Usuario />} />
+          <Route path="recarga" element={<Recarga />} />
+          <Route path="tarjeta" element={<Tarjeta />} />
+          <Route path="agente" element={<Agente />} />
+        </Route>
       </Routes>
     </Router>
   );
