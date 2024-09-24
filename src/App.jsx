@@ -12,6 +12,7 @@ import Tarjeta from "./pages/Usuario/tarjeta";
 import Codigo from "./pages/Usuario/codigo";
 import Agente from "./pages/Usuario/agente";
 import ModalComponent from "./components/ModalComponent";
+import Ecommerce from "./components/Ecommerce/Ecommerce";
 
 import Dashboard from "./pages/dashboard";
 
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="recarga" element={<Recarga />} />
           <Route path="tarjeta" element={<Tarjeta />} />
           <Route path="agente" element={<Agente />} />
+          <Route path="ecommerce" element={<Ecommerce />} />
         </Route>
       </Routes>
     </Router>

@@ -91,7 +91,7 @@ const SileBarDashboard = ({ isSidebarOpen, toggleSidebar }) => {
             <button
               onClick={() => {
                 toggleSidebar();
-                navigate("/dashboard/agente");
+                navigate("/dashboard/ecommerce");
               }}
             >
               Canjear puntos
