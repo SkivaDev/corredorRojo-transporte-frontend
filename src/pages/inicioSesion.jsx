@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,21 +17,50 @@ const Login = () => {
   };
 
   const navigate = useNavigate();
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevenir comportamiento por defecto
 
-    // Mostrar SweetAlert2
-    Swal.fire({
-      title: "Inicio de sesión exitoso",
-      icon: "success",
-      confirmButtonText: "OK",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Redirigir al usuario al componente "Usuario"
-        navigate("/dashboard");
-        window.scrollTo(0, 0); // Mover al principio de la página
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:8080/api/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        Swal.fire({
+          icon: "success",
+          title: data.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+        // Redirigir al usuario basado en la URL proporcionada por el backend
+        setTimeout(() => {
+          navigate(data.redirectUrl); // Navegación a la URL recibida
+        }, 1500);
+      } else {
+        const errorData = await response.json();
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: errorData.message, // Mostrar el mensaje de error desde el backend
+        });
       }
-    });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se pudo conectar con el servidor",
+      });
+    }
   };
 
   const togglePasswordVisibility = () => {

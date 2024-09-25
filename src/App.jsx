@@ -11,21 +11,14 @@ import Usuario from "./pages/usuario";
 import Tarjeta from "./pages/Usuario/tarjeta";
 import Codigo from "./pages/Usuario/codigo";
 import Agente from "./pages/Usuario/agente";
-import ModalComponent from "./components/ModalComponent";
+
 import Ecommerce from "./components/Ecommerce/Ecommerce";
 
 import Dashboard from "./pages/dashboard";
 
 const App = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(true);
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
   return (
     <Router>
-      <ModalComponent isOpen={modalIsOpen} closeModal={closeModal} /> {}
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/inicio" element={<Inicio />} />
