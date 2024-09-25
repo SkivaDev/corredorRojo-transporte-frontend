@@ -1,5 +1,5 @@
 import React from "react";
-
+import MapComponent from "../../components/MapComponent";
 const Agentes = () => {
   return (
     <div className="p-6 mt-16 sm:ml-64">
@@ -10,6 +10,7 @@ const Agentes = () => {
         <li>Scotiabank</li>
       </ul>
       <p>Encuentra la ubicación más cercana en la página web de tu banco.</p>
+      <MapComponent />
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7804.238061984079!2d-76.92544307563672!3d-12.035325578105637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1stodos%20los%20bancos!5e0!3m2!1ses-419!2spe!4v1726525598845!5m2!1ses-419!2spe"
         style={{ border: 0 }}

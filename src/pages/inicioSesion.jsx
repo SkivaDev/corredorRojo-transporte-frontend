@@ -18,6 +18,26 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const handleLogin = async () => {
+    // Redirigir al usuario a la página de login de OAuth
+    window.location.href = `https://accounts.google.com/o/oauth2/auth?client_id=189821881491-h7jn2420lf2tsuu3u5794pnbvc8p3jk7.apps.googleusercontent.com&redirect_uri=http://localhost:5173/dashboard&response_type=token&scope=email`;
+  };
+
+  // Manejar el redireccionamiento después de la autenticación
+  const handleRedirect = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const token = hash.split("&")[0].split("=")[1];
+      // Guardar el token en el almacenamiento local o en el estado
+      localStorage.setItem("token", token);
+      navigate("/dashboard"); // Redirigir a la página de destino
+    }
+  };
+
+  React.useEffect(() => {
+    handleRedirect();
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -44,6 +64,7 @@ const Login = () => {
 
         // Redirigir al usuario basado en la URL proporcionada por el backend
         setTimeout(() => {
+          localStorage.setItem("username", data.username);
           navigate(data.redirectUrl); // Navegación a la URL recibida
         }, 1500);
       } else {
@@ -127,6 +148,7 @@ const Login = () => {
               </button>
             </div>
           </div>
+          <p onClick={handleLogin}>Iniciar sesión con Google</p>
           <a href="" className="flex justify-end py-2">
             <Link
               to="/registro"

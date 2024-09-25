@@ -3,7 +3,16 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Usuario = () => {
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Obtener el nombre de usuario del localStorage
+    const savedUsername = localStorage.getItem("username");
+    if (savedUsername) {
+      setUsername(savedUsername);
+    }
+  }, []);
 
   // Función para manejar el cierre de sesión
   const handleLogout = () => {
@@ -175,6 +184,7 @@ const Usuario = () => {
           <h1 className="text-3xl font-bold mb-4">
             Saldo: S/{saldo.toFixed(2)}
           </h1>
+          <h1>Bienvenido {username}</h1>
           {selectedSection === "recargarTarjeta" && (
             <div>
               <h2 className="text-2xl font-bold mb-4">Recargar Tarjeta</h2>
