@@ -34,8 +34,8 @@ const Register = () => {
       );
 
       Swal.fire({
-        title: "Success!",
-        text: "User registered successfully!",
+        title: "Usuario Registrado!",
+        text: "Usuario registrado correctamente!",
         icon: "success",
         confirmButtonText: "OK",
       });
@@ -47,7 +47,7 @@ const Register = () => {
     } catch (error) {
       Swal.fire({
         title: "Error!",
-        text: "There was an error registering the user!",
+        text: "Se ha producido un error al registrar al usuario!",
         icon: "error",
         confirmButtonText: "OK",
       });

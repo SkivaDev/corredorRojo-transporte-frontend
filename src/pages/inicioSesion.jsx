@@ -64,6 +64,7 @@ const Login = () => {
 
         // Redirigir al usuario basado en la URL proporcionada por el backend
         setTimeout(() => {
+          localStorage.setItem("userId", data.userId);
           localStorage.setItem("username", data.username);
           navigate(data.redirectUrl); // Navegación a la URL recibida
         }, 1500);

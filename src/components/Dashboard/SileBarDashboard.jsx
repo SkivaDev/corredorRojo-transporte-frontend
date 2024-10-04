@@ -79,7 +79,7 @@ const SileBarDashboard = ({ isSidebarOpen, toggleSidebar }) => {
             <button
               onClick={() => {
                 toggleSidebar();
-                navigate("/dashboard/tarjeta");
+                navigate("/dashboard/map");
               }}
             >
               Ver Paraderos
@@ -100,7 +100,12 @@ const SileBarDashboard = ({ isSidebarOpen, toggleSidebar }) => {
 
           <li className="text-black dark:text-white hover:bg-red-500 hover:text-white dark:hover:bg-slate-500 hover:rounded-md pl-5 py-1">
             <FontAwesomeIcon icon={faClockRotateLeft} className="pr-5" />
-            <button>Historial de compras</button>
+            <button
+              onClick={() => {
+                toggleSidebar();
+                navigate("/dashboard/historial");
+              }}
+            >Historial de compras</button>
           </li>
 
           <li className="text-black dark:text-white hover:bg-red-500 hover:text-white dark:hover:bg-slate-500 hover:rounded-md pl-5 py-1">

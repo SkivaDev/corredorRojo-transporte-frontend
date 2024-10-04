@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CartPanel = ({ isOpen, cart, toggleCart }) => {
-  const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  const total = cart.reduce((acc, item) => acc + (item.quantity * item.product.pointsNeeded), 0);
 
   return (
     <div
@@ -30,15 +31,15 @@ const CartPanel = ({ isOpen, cart, toggleCart }) => {
                   className="flex justify-between items-center"
                 >
                   <img
-                    src={item.image}
-                    alt={item.title}
+                    src={item.product.imageUrl}
+                    alt={item.name}
                     className="w-12 h-12 object-cover rounded"
                   />
                   <div className="ml-4 flex-1">
-                    <h3 className="font-semibold">{item.title}</h3>
+                    <h3 className="font-semibold">{item.name}</h3>
                     <p className="text-sm">Cantidad: {item.quantity}</p>
                   </div>
-                  <p className="font-semibold">${item.price * item.quantity}</p>
+                  <p className="font-semibold">{item.quantity * item.product.pointsNeeded}</p>
                 </div>
               )
           )
@@ -49,14 +50,14 @@ const CartPanel = ({ isOpen, cart, toggleCart }) => {
         <div className="p-4 border-t">
           <div className="flex justify-between font-bold">
             <span>Total:</span>
-            <span>${total}</span>
+            <span>{total}</span>
           </div>
           <Link
-            to=""
+            to="/dashboard/ecommerce/cart"
             className="block bg-green-500 text-white text-center py-2 mt-4 rounded hover:bg-green-600"
             onClick={toggleCart}
           >
-            Realizar Compra
+            Ir al Carrito
           </Link>
         </div>
       )}

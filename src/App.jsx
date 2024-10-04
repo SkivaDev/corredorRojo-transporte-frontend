@@ -7,14 +7,18 @@ import Blog from "./pages/blog";
 import Contacto from "./pages/contacto";
 import InicioSesion from "./pages/inicioSesion";
 import Registro from "./pages/register";
+
 import Usuario from "./pages/usuario";
 import Tarjeta from "./pages/Usuario/tarjeta";
 import Codigo from "./pages/Usuario/codigo";
 import Agente from "./pages/Usuario/agente";
-
+import Map from "./pages/Usuario/map";
 import Ecommerce from "./components/Ecommerce/Ecommerce";
 
 import Dashboard from "./pages/dashboard";
+import Cart from "./components/Ecommerce/Cart";
+import CheckOut from "./components/Ecommerce/CheckOut";
+import Historial from "./pages/Historial/historial";
 
 const App = () => {
   return (
@@ -37,6 +41,10 @@ const App = () => {
           <Route path="tarjeta" element={<Tarjeta />} />
           <Route path="agente" element={<Agente />} />
           <Route path="ecommerce" element={<Ecommerce />} />
+          <Route path="ecommerce/cart" element={<Cart />} />
+          <Route path="ecommerce/cart/checkout" element={<CheckOut />} />
+          <Route path="historial" element={<Historial />} />
+          <Route path="map" element={<Map />} />
         </Route>
       </Routes>
     </Router>
