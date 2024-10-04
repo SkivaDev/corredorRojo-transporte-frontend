@@ -110,7 +110,10 @@ const SileBarDashboard = ({ isSidebarOpen, toggleSidebar }) => {
 
           <li className="text-black dark:text-white hover:bg-red-500 hover:text-white dark:hover:bg-slate-500 hover:rounded-md pl-5 py-1">
             <FontAwesomeIcon icon={faGear} className="pr-5" />
-            <button>Configuración</button>
+            <button onClick={() => {
+                toggleSidebar();
+                navigate("/dashboard/profile");
+              }}>Configuración</button>
           </li>
 
           <li className="text-white absolute bottom-8 rounded-md hover:rounded-md bg-red-500 dark:bg-slate-500 pl-5 py-1 w-[90%]">

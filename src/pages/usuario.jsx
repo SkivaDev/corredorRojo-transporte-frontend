@@ -4,13 +4,23 @@ import Swal from "sweetalert2";
 
 const Usuario = () => {
   const [username, setUsername] = useState("");
+  const [id, setId] = useState("");
+  const [rol, setRol] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     // Obtener el nombre de usuario del localStorage
     const savedUsername = localStorage.getItem("username");
+    const savedRol = localStorage.getItem("rol");
+    const savedId = localStorage.getItem("id");
     if (savedUsername) {
       setUsername(savedUsername);
+    }
+    if (savedId) {
+      setId(savedId);
+    }
+    if (savedRol) {
+      setRol(savedRol);
     }
   }, []);
 
@@ -111,80 +121,16 @@ const Usuario = () => {
   };
 
   return (
-    <div className="h-screen flex mt-16 sm:ml-64">
-      {/* Panel lateral izquierdo */}
-      <div className="w-[20%] bg-gray-800 text-white p-6">
-        {/* Foto y nombre del usuario */}
-        <div className="flex flex-col items-center mb-10">
-          <img
-            src="/src/assets/images/usuario.png"
-            alt="Foto del usuario"
-            className="rounded-full w-24 h-24 mb-4"
-          />
-          <h2 className="text-xl font-bold">Usuario</h2>
-        </div>
-
-        {/* Botones de acción */}
-        <ul className="space-y-4">
-          <li>
-            <button
-              className="w-full text-left bg-gray-700 hover:bg-gray-600 p-2 rounded"
-              onClick={() => setSelectedSection("recargarTarjeta")}
-            >
-              Recargar Tarjeta
-            </button>
-          </li>
-          <li>
-            <button
-              className="w-full text-left bg-gray-700 hover:bg-gray-600 p-2 rounded"
-              onClick={() => setSelectedSection("comprarPasaje")}
-            >
-              Comprar Pasaje
-            </button>
-          </li>
-          <li>
-            <button
-              className="w-full text-left bg-gray-700 hover:bg-gray-600 p-2 rounded"
-              onClick={() => setSelectedSection("verRutas")}
-            >
-              Ver Paraderos
-            </button>
-          </li>
-          <li>
-            <button
-              className="w-full text-left bg-gray-700 hover:bg-gray-600 p-2 rounded"
-              onClick={() => setSelectedSection("historialCompra")}
-            >
-              Historial de compra
-            </button>
-          </li>
-          <li>
-            <button
-              className="w-full text-left bg-gray-700 hover:bg-gray-600 p-2 rounded"
-              onClick={() => setSelectedSection("canjearPuntos")}
-            >
-              Canjear Puntos
-            </button>
-          </li>
-        </ul>
-
-        {/* Botón de cerrar sesión */}
-        <div className="mt-10">
-          <button
-            className="w-full bg-red-600 hover:bg-red-700 p-2 rounded text-center"
-            onClick={handleLogout}
-          >
-            Cerrar Sesión
-          </button>
-        </div>
-      </div>
-
-      <div className="w-3/4 p-6">
+    <div className="mx-auto p-8 shadow-lg mt-16 sm:ml-64 dark:bg-gray-800 dark:text-white h-screen">
+      <div>
         <div>
           <h1 className="text-3xl font-bold mb-4">
             Saldo: S/{saldo.toFixed(2)}
           </h1>
-          <h1>Bienvenido {username}</h1>
+          <h1>
+            Bienvenido {rol} {username}
+          </h1>
+          <h1>ID {id}</h1>
           {selectedSection === "recargarTarjeta" && (
             <div>
               <h2 className="text-2xl font-bold mb-4">Recargar Tarjeta</h2>
@@ -248,34 +194,6 @@ const Usuario = () => {
             </div>
           )}
         </div>
-
-        {selectedSection === "comprarPasaje" && (
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Comprar Pasaje</h2>
-            <p>Contenido para comprar pasaje...</p>
-          </div>
-        )}
-
-        {selectedSection === "verRutas" && (
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Ver Paraderos</h2>
-            <p>Podras ver todas los paraderos del corredor rojo...</p>
-          </div>
-        )}
-
-        {selectedSection === "historialCompra" && (
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Historial de compras</h2>
-            <p>Historial de compras...</p>
-          </div>
-        )}
-
-        {selectedSection === "canjearPuntos" && (
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Canjear Puntos</h2>
-            <p>Contenido para canjear puntos...</p>
-          </div>
-        )}
       </div>
     </div>
   );

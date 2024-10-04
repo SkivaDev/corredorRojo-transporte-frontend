@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCartPanel";
 import CartPanel from "../Ecommerce/CartPanel";
-import { listProducts } from "../../services/ProductService";
-import { getCart } from "../../services/CartService";
-import { createCartItem, listCartItems, updateCartItem } from "../../services/CartItemService";
+import { listProducts } from "../../api/ProductService";
+import { getCart } from "../../api/CartService";
+import { createCartItem, listCartItems, updateCartItem } from "../../api/CartItemService";
 import ProductCartPanel from "./ProductCartPanel";
 
 /*const productsData = [

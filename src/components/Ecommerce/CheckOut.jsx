@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PriceDetails from "./PriceDetails";
-import { getCart } from "../../services/CartService";
-import { listCartItems } from "../../services/CartItemService";
+import { getCart } from "../../api/CartService";
+import { listCartItems } from "../../api/CartItemService";
 import { MapPinHouse } from "lucide-react";
-import { getUser } from "../../services/UserService";
+import { getUser } from "../../api/UserService";
 import { useForm } from "react-hook-form";
 
 const CheckOut = () => {

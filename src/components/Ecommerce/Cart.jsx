@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ProductCart from "./ProductCart";
 import PriceDetails from "./PriceDetails";
-import { getCart } from "../../services/CartService";
+import { getCart } from "../../api/CartService";
 import {
   deleteCartItem,
   listCartItems,
   updateCartItem,
-} from "../../services/CartItemService";
+} from "../../api/CartItemService";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {

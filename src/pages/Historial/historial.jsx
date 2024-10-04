@@ -5,7 +5,7 @@ import {
   Search,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { listTransactions } from "../../services/TransactionService";
+import { listTransactions } from "../../api/TransactionService";
 
 const Historial = () => {
   const [transactions, setTransactions] = useState([]);

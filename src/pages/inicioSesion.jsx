@@ -9,7 +9,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
   const [activeLink, setActiveLink] = useState("/inicio");
 
   const handleLinkClick = (path) => {
@@ -64,16 +63,17 @@ const Login = () => {
 
         // Redirigir al usuario basado en la URL proporcionada por el backend
         setTimeout(() => {
-          localStorage.setItem("userId", data.userId);
           localStorage.setItem("username", data.username);
-          navigate(data.redirectUrl); // Navegación a la URL recibida
+          localStorage.setItem("id", data.id);
+          localStorage.setItem("rol", data.rol);
+          navigate(data.redirectUrl);
         }, 1500);
       } else {
         const errorData = await response.json();
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: errorData.message, // Mostrar el mensaje de error desde el backend
+          text: errorData.message,
         });
       }
     } catch (error) {
@@ -90,13 +90,12 @@ const Login = () => {
   };
 
   return (
-    <div className="font-principal w-full grid grid-cols-1 px-5 h-screen content-center md:grid-cols-2">
+    <div className="font-principal w-full grid grid-cols-1 px-5 h-screen content-center md:grid-cols-2 max-w-[1840px] mx-auto">
       <div className="hidden md:block m-auto">
         <img
           src="/src/assets/images/login_img.jpg"
           alt=""
-          width={600}
-          className=""
+          className="w-full max-w-[700px]"
         />
       </div>
       <div className="w-[80%] mx-auto">
@@ -149,17 +148,9 @@ const Login = () => {
               </button>
             </div>
           </div>
+
           <p onClick={handleLogin}>Iniciar sesión con Google</p>
-          <a href="" className="flex justify-end py-2">
-            <Link
-              to="/registro"
-              className={activeLink === "/registro"}
-              onClick={() => handleLinkClick("/registro")}
-            >
-              ¿Aún no tienes una cuenta?{" "}
-              <span className="font-bold pl-5 text-red-700">Registrate</span>
-            </Link>
-          </a>
+
           <button
             type="submit"
             className="w-full py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition-colors"
@@ -167,6 +158,17 @@ const Login = () => {
             Iniciar Sesión
           </button>
         </form>
+
+        <a href="" className="flex justify-end py-2 my-5">
+          <Link
+            to="/registro"
+            className={activeLink === "/registro"}
+            onClick={() => handleLinkClick("/registro")}
+          >
+            ¿Aún no tienes una cuenta?{" "}
+            <span className="font-bold pl-5 text-red-700">Registrate</span>
+          </Link>
+        </a>
       </div>
     </div>
   );

@@ -19,6 +19,9 @@ import Dashboard from "./pages/dashboard";
 import Cart from "./components/Ecommerce/Cart";
 import CheckOut from "./components/Ecommerce/CheckOut";
 import Historial from "./pages/Historial/historial";
+import ModalComponent from "./components/ModalComponent";
+import EditarUser from "./components/EditUser";
+import UserProfile from "./pages/Usuario/Userprofile";
 
 const App = () => {
   return (
@@ -34,6 +37,7 @@ const App = () => {
         <Route path="/usuario" element={<Usuario />} />
 
         <Route path="/codigo" element={<Codigo />} />
+        <Route path="/modal" element={<ModalComponent />} />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Usuario />} />
@@ -45,6 +49,8 @@ const App = () => {
           <Route path="ecommerce/cart/checkout" element={<CheckOut />} />
           <Route path="historial" element={<Historial />} />
           <Route path="map" element={<Map />} />
+          <Route path="edit/:userId" element={<EditarUser />} />
+          <Route path="profile" element={<UserProfile />} />
         </Route>
       </Routes>
     </Router>
