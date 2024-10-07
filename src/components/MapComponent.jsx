@@ -24,11 +24,7 @@ const MapComponent = () => {
     { lat: -12.0827443344306, lng: -77.06761651488843, name: "Punto 11" },
     { lat: -12.073260164263605, lng: -77.10001759965917, name: "Punto 12" },
     { lat: -12.069399255503972, lng: -77.09808640911417, name: "Punto 13" },
-    {
-      lat: -12.061227979866233,
-      lng: -77.07924613734393,
-      name: "Terminal - Punto 14",
-    },
+    {lat: -12.061227979866233, lng: -77.07924613734393, name: "Terminal - Punto 14", },
   ];
 
   const [markers, setMarkers] = useState(initialMarkers);
