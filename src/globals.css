@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply transition-colors duration-200;
+}
+
 @layer components {
   .transition {
-    @apply transition-transform duration-300 transform hover:scale-110
+    @apply transition-transform duration-300 transform hover:scale-110;
   }
 
   .area {
@@ -21,12 +25,9 @@
       "nombre   nombre"
       "correo   celular"
       "mensaje  mensaje"
-      "enviar   enviar"
-    ;
+      "enviar   enviar";
   }
 }
-
-
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

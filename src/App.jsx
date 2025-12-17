@@ -7,23 +7,25 @@ import Blog from "./pages/blog";
 import Contacto from "./pages/contacto";
 import InicioSesion from "./pages/inicioSesion";
 import Registro from "./pages/register";
+
 import Usuario from "./pages/usuario";
 import Tarjeta from "./pages/Usuario/tarjeta";
 import Codigo from "./pages/Usuario/codigo";
-import Agente  from "./pages/Usuario/agente";
-import ModalComponent from "./components/ModalComponent"; 
-import "./App.css";
+import Agente from "./pages/Usuario/agente";
+import Map from "./pages/Usuario/map";
+import Ecommerce from "./components/Ecommerce/Ecommerce";
+
+import Dashboard from "./pages/dashboard";
+import Cart from "./components/Ecommerce/Cart";
+import CheckOut from "./components/Ecommerce/CheckOut";
+import Historial from "./pages/Historial/historial";
+import ModalComponent from "./components/ModalComponent";
+import EditarUser from "./components/EditUser";
+import UserProfile from "./pages/Usuario/Userprofile";
 
 const App = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(true); 
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
   return (
     <Router>
-      <ModalComponent isOpen={modalIsOpen} closeModal={closeModal} /> {}
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/inicio" element={<Inicio />} />
@@ -33,10 +35,23 @@ const App = () => {
         <Route path="/inicioSesion" element={<InicioSesion />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/usuario" element={<Usuario />} />
-        <Route path="/recarga" element={<Recarga />} />
-        <Route path="/tarjeta" element={<Tarjeta />} />
-        <Route path="/agente" element={<Agente />} />
+
         <Route path="/codigo" element={<Codigo />} />
+        <Route path="/modal" element={<ModalComponent />} />
+
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<Usuario />} />
+          <Route path="recarga" element={<Recarga />} />
+          <Route path="tarjeta" element={<Tarjeta />} />
+          <Route path="agente" element={<Agente />} />
+          <Route path="ecommerce" element={<Ecommerce />} />
+          <Route path="ecommerce/cart" element={<Cart />} />
+          <Route path="ecommerce/cart/checkout" element={<CheckOut />} />
+          <Route path="historial" element={<Historial />} />
+          <Route path="map" element={<Map />} />
+          <Route path="edit/:userId" element={<EditarUser />} />
+          <Route path="profile" element={<UserProfile />} />
+        </Route>
       </Routes>
     </Router>
   );

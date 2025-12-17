@@ -1,25 +1,26 @@
 import React from "react";
-import Swal from "sweetalert2"
+import Swal from "sweetalert2";
 
 const Tarjeta = () => {
-
   const handleEnviar = () => {
     Swal.fire({
-      title: 'Pago exitoso!',
-      text: 'Su recarga se esta procesando',
-      icon: 'success',
-      confirmButtonText: 'OK'
+      title: "Pago exitoso!",
+      text: "Su recarga se esta procesando",
+      icon: "success",
+      confirmButtonText: "OK",
     });
   };
 
   return (
-    <div className="bg-gray-900 p-8 min-h-screen flex justify-center items-center">
+    <div className="bg-gray-900 p-8 min-h-screen flex items-center mt-16 sm:ml-64">
       {/* Contenedor principal */}
-      <div className="bg-gray-800 text-white shadow-lg rounded-lg p-6 max-w-xl w-full">
+      <div className="bg-gray-800 text-white shadow-lg rounded-lg p-6 w-full">
         {/* Sección de Método de Pago */}
         <h2 className="text-2xl font-bold mb-4">MÉTODO DE PAGO</h2>
         <div className="mb-6">
-          <label className="block mb-2 text-gray-300">Selecciona un método de pago:</label>
+          <label className="block mb-2 text-gray-300">
+            Selecciona un método de pago:
+          </label>
           <select className="w-full p-2 bg-gray-700 text-white rounded border border-gray-600">
             <option value="Visa">Visa</option>
             <option value="MasterCard">MasterCard</option>
@@ -30,7 +31,9 @@ const Tarjeta = () => {
         {/* Información de la tarjeta */}
         <div className="space-y-4 mb-6">
           <div>
-            <label className="block mb-1 text-gray-300">Número de tarjeta:</label>
+            <label className="block mb-1 text-gray-300">
+              Número de tarjeta:
+            </label>
             <input
               type="text"
               placeholder="Número de tarjeta"
@@ -39,7 +42,9 @@ const Tarjeta = () => {
           </div>
           <div className="flex space-x-4">
             <div className="w-1/2">
-              <label className="block mb-1 text-gray-300">Fecha de caducidad:</label>
+              <label className="block mb-1 text-gray-300">
+                Fecha de caducidad:
+              </label>
               <div className="flex space-x-2">
                 <select className="w-full p-2 bg-gray-700 text-white rounded border border-gray-600">
                   <option value="">Mes</option>
@@ -56,7 +61,9 @@ const Tarjeta = () => {
               </div>
             </div>
             <div className="w-1/2">
-              <label className="block mb-1 text-gray-300">Código de seguridad:</label>
+              <label className="block mb-1 text-gray-300">
+                Código de seguridad:
+              </label>
               <input
                 type="text"
                 placeholder="CVC"
@@ -98,7 +105,9 @@ const Tarjeta = () => {
               />
             </div>
             <div className="w-1/2">
-              <label className="block mb-1 text-gray-300">Código postal o ZIP:</label>
+              <label className="block mb-1 text-gray-300">
+                Código postal o ZIP:
+              </label>
               <input
                 type="text"
                 placeholder="Código postal"
@@ -108,7 +117,9 @@ const Tarjeta = () => {
           </div>
 
           <div>
-            <label className="block mb-1 text-gray-300">Dirección de facturación:</label>
+            <label className="block mb-1 text-gray-300">
+              Dirección de facturación:
+            </label>
             <input
               type="text"
               placeholder="Dirección"
@@ -138,15 +149,22 @@ const Tarjeta = () => {
         {/* Guardar información */}
         <div className="mt-6">
           <label className="flex items-center space-x-2">
-            <input type="checkbox" className="form-checkbox bg-gray-700 border border-gray-600 text-blue-600" />
-            <span className="text-gray-300">Guardar mi información de pago para facilitar el proceso la próxima vez</span>
+            <input
+              type="checkbox"
+              className="form-checkbox bg-gray-700 border border-gray-600 text-blue-600"
+            />
+            <span className="text-gray-300">
+              Guardar mi información de pago para facilitar el proceso la
+              próxima vez
+            </span>
           </label>
         </div>
 
         {/* Botón de envío */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white p-3 rounded mt-6 hover:bg-blue-700" onClick={handleEnviar}
+          className="w-full bg-blue-600 text-white p-3 rounded mt-6 hover:bg-blue-700"
+          onClick={handleEnviar}
         >
           Realizar Pago
         </button>
